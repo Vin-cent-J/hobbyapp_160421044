@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/signinFragment">
+
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.vincent.myapplication.view.SigninFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_signin">
+        <action
+            android:id="@+id/homeFragmentAction"
+            app:destination="@id/itemHome" />
+        <action
+            android:id="@+id/registerFragmentAction"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="com.vincent.myapplication.view.HomeFragment"
+        android:label="Today's news"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/profilFragmentAction"
+            app:destination="@id/itemProfil" />
+        <action
+            android:id="@+id/detailFragmentAction"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfil"
+        android:name="com.vincent.myapplication.view.ProfilFragment"
+        android:label="Update profile"
+        tools:layout="@layout/fragment_profil">
+        <action
+            android:id="@+id/signinFragmentAction"
+            app:destination="@id/signinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.vincent.myapplication.view.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/signinFragmentAction"
+            app:destination="@id/signinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.vincent.myapplication.view.DetailFragment"
+        android:label="Read news"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="idBerita"
+            app:argType="integer" />
+    </fragment>
+</navigation>
